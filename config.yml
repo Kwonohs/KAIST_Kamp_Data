@@ -1,0 +1,15 @@
+experimentName: lstm_ae_tuning
+trialCommand: python trial_lstm.py
+trialCodeDirectory: .
+tuner:
+  name: TPE
+  classArgs:
+    optimize_mode: minimize
+trialConcurrency: 4
+maxTrialNumber: 20
+searchSpaceFile: search_space.json
+
+trainingService:
+  platform: local
+  useActiveGpu: true
+  maxTrialNumberPerGpu: 1
